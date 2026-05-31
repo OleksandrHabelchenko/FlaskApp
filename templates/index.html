@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask App</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <p>This is my Flask app</p>
+    <a href="/about">About</a>
+    <h2>Skills</h2>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill['name'] }}
+                <a href="/edit/{{ skill ['id'] }}">edit</a>
+                <a href="/delete/{{ skill ['id'] }}">delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>Add Skill</h2>
+    <form method="POST" action="/add">
+        <input type="text" name="skill" placeholder="Enter skill">
+        <button type="submit">Add</button> 
+    </form>
+</body>
+</html>
