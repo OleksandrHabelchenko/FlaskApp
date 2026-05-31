@@ -5,10 +5,12 @@
 </head>
 <body>
     <h1>Edit Skill</h1>
+    <!-- form sends POST request to /update/id -->
     <form method="POST" action="/update/{{ skill['id'] }}">
+        <!-- input field with current skill name as default value -->
         <input type="text" name="name" value="{{ skill['name'] }}">
         <button type="submit">Save</button>
     </form>
-    <a href="/">Back</a> 
+    <a href="/">Back</a> <!-- link back to main page -->
 </body>
 </html>

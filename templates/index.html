@@ -7,19 +7,26 @@
     <h1>Hello World!</h1>
     <p>This is my Flask app</p>
     <a href="/about">About</a>
+
     <h2>Skills</h2>
     <ul>
+        <!-- loop through all skills from database -->
         {% for skill in skills %}
             <li>{{ skill['name'] }}
-                <a href="/edit/{{ skill ['id'] }}">edit</a>
-                <a href="/delete/{{ skill ['id'] }}">delete</a>
+                <!-- link to edit page with skill id -->
+                <a href="/edit/{{ skill['id'] }}">edit</a>
+                <!-- link to delete skill by id -->
+                <a href="/delete/{{ skill['id'] }}">delete</a>
             </li>
         {% endfor %}
     </ul>
+
+    <!-- form to add new skill - sends POST request to /add -->
     <h2>Add Skill</h2>
     <form method="POST" action="/add">
         <input type="text" name="skill" placeholder="Enter skill">
-        <button type="submit">Add</button> 
+        <button type="submit">Add</button>
     </form>
 </body>
 </html>
+
